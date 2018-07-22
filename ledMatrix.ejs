@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-	
+<html>	
 <head>
 	<title>LED Control</title>
 	<meta charset = "utf-8"/>
@@ -42,8 +41,7 @@
 			background-color:white;
 		}
 
-	</style>
-	
+	</style>	
 	<script>
 		window.onload = function(){
 			gridTable = document.getElementById("gridTable");
@@ -77,7 +75,7 @@
 			for (var i=0; i<64; ++i){
 				matrix[i].style.background = "white";
 			}
-			fetch('/'); // Calls server to clear the sense hat Led. This is cool because it doesn't need to reload the page.
+			fetch('/'); // Calls server to clear the sense hat Led. Does not need to reload the page.
 		}			
 	</script>
 </head>
@@ -93,7 +91,6 @@
 				<option value = "purple">Purple</option>
 				<option value = "aqua">Aqua</option>
 			</select>
-		
 			<table id="gridTable">			
 			</table>
 		</form>
