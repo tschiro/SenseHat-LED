@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req,res) {
-		if(req.query.x == undefined){	//first time through app.get, and when clear button pressed, req.query.x is undefined, so clear the senseLed
+		if(!req.query){	//first time through app.get, and when clear button pressed, req.query is undefined, so clear the senseLed
 			senseLed.clear();			
 		}
 		else {								//x, y, and theColor are sent with the fetch call from ledMatrix.ejs (html file). Sent as string values.
@@ -28,12 +28,6 @@ app.get('/', function(req,res) {
 		}
 		res.render('ledMatrix');						
 });
-
-//app.post('/led/clear', function(req,res){
-
-//	senseLed.clear();
-//	res.render('ledMatrix');	
-//});
 
 app.listen(3000, function() {
 		
